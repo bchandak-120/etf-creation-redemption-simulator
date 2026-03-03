@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-text { background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold gradient-text">Your Name</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-blue-600 transition">Home</a>
+                    <a href="#resume" class="nav-link text-gray-700 hover:text-blue-600 transition">Resume</a>
+                    <a href="#projects" class="nav-link text-gray-700 hover:text-blue-600 transition">Projects</a>
+                    <a href="#research" class="nav-link text-gray-700 hover:text-blue-600 transition">Research</a>
+                    <a href="#experience" class="nav-link text-gray-700 hover:text-blue-600 transition">Experience</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 transition">Contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-40 hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="#home" class="text-2xl text-gray-700 hover:text-blue-600 mobile-nav-link">Home</a>
+            <a href="#resume" class="text-2xl text-gray-700 hover:text-blue-600 mobile-nav-link">Resume</a>
+            <a href="#projects" class="text-2xl text-gray-700 hover:text-blue-600 mobile-nav-link">Projects</a>
+            <a href="#research" class="text-2xl text-gray-700 hover:text-blue-600 mobile-nav-link">Research</a>
+            <a href="#experience" class="text-2xl text-gray-700 hover:text-blue-600 mobile-nav-link">Experience</a>
+            <a href="#contact" class="text-2xl text-gray-700 hover:text-blue-600 mobile-nav-link">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                    <span class="gradient-text">Hello, I'm Your Name</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 mb-8">
+                    Professional Title | Software Developer | Researcher
+                </p>
+                <div class="flex justify-center space-x-4 mb-12">
+                    <a href="#contact" class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition">
+                        Get In Touch
+                    </a>
+                    <a href="#projects" class="bg-white text-blue-600 border-2 border-blue-600 px-8 py-3 rounded-full hover:bg-blue-600 hover:text-white transition">
+                        View Projects
+                    </a>
+                </div>
+                <div class="flex justify-center space-x-6">
+                    <a href="https://github.com/yourusername" target="_blank" class="text-2xl text-gray-600 hover:text-blue-600 transition">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/yourusername" target="_blank" class="text-2xl text-gray-600 hover:text-blue-600 transition">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:your.email@example.com" class="text-2xl text-gray-600 hover:text-blue-600 transition">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Resume</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gray-50 rounded-lg p-8 shadow-lg">
+                    <div id="resume-content">
+                        <div class="text-center text-gray-600">
+                            <i class="fas fa-file-pdf text-6xl mb-4"></i>
+                            <p class="mb-4">Upload your resume file to display it here</p>
+                            <div class="border-2 border-dashed border-blue-300 rounded-lg p-8">
+                                <input type="file" id="resume-upload" accept=".pdf,.doc,.docx" class="hidden">
+                                <label for="resume-upload" class="cursor-pointer">
+                                    <i class="fas fa-cloud-upload-alt text-4xl mb-2 text-blue-600"></i>
+                                    <p>Click to upload your resume</p>
+                                    <p class="text-sm text-gray-500">PDF, DOC, DOCX (Max 10MB)</p>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Projects</h2>
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+                    <div class="bg-white rounded-lg p-6 shadow-lg card-hover">
+                        <div class="text-center text-gray-600">
+                            <i class="fas fa-plus text-4xl mb-4"></i>
+                            <p>Add your first project</p>
+                            <button id="add-project-btn" class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                                Add Project
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Research Papers</h2>
+            <div class="max-w-4xl mx-auto">
+                <div id="research-content">
+                    <div class="bg-gray-50 rounded-lg p-8 shadow-lg text-center">
+                        <i class="fas fa-file-alt text-6xl mb-4 text-gray-600"></i>
+                        <p class="text-gray-600 mb-4">Upload your research papers to display them here</p>
+                        <div class="border-2 border-dashed border-blue-300 rounded-lg p-8">
+                            <input type="file" id="research-upload" accept=".pdf,.doc,.docx" multiple class="hidden">
+                            <label for="research-upload" class="cursor-pointer">
+                                <i class="fas fa-cloud-upload-alt text-4xl mb-2 text-blue-600"></i>
+                                <p>Click to upload research papers</p>
+                                <p class="text-sm text-gray-500">PDF, DOC, DOCX (Max 10MB each)</p>
+                            </label>
+                        </div>
+                        <div id="research-list" class="mt-6 space-y-4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Experience & Reflections</h2>
+            <div class="max-w-4xl mx-auto">
+                <div id="experience-content">
+                    <div class="space-y-8">
+                        <div class="bg-white rounded-lg p-8 shadow-lg">
+                            <div class="text-center text-gray-600">
+                                <i class="fas fa-briefcase text-6xl mb-4"></i>
+                                <p>Add your work experiences and what you gained from them</p>
+                                <button id="add-experience-btn" class="mt-4 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition">
+                                    Add Experience
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Get In Touch</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gray-50 rounded-lg p-8 shadow-lg">
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label class="block text-gray-700 mb-2">Name</label>
+                            <input type="text" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-purple-600" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-purple-600" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2">Message</label>
+                            <textarea rows="5" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-purple-600" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+        <div class="bg-white rounded-lg p-8 max-w-2xl w-full mx-4">
+            <h3 class="text-2xl font-bold mb-4">Add New Project</h3>
+            <form id="project-form" class="space-y-4">
+                <div>
+                    <label class="block text-gray-700 mb-2">Project Name</label>
+                    <input type="text" id="project-name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-purple-600" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-2">Description</label>
+                    <textarea id="project-description" rows="3" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-purple-600" required></textarea>
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-2">Technologies</label>
+                    <input type="text" id="project-tech" placeholder="React, Node.js, MongoDB" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-purple-600" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-2">GitHub Link</label>
+                    <input type="url" id="project-github" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-purple-600">
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-2">Live Demo Link</label>
+                    <input type="url" id="project-demo" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-purple-600">
+                </div>
+                <div class="flex space-x-4">
+                    <button type="submit" class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition">
+                        Add Project
+                    </button>
+                    <button type="button" id="cancel-project" class="bg-gray-300 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-400 transition">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Experience Modal -->
+    <div id="experience-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+        <div class="bg-white rounded-lg p-8 max-w-2xl w-full mx-4">
+            <h3 class="text-2xl font-bold mb-4">Add Work Experience</h3>
+            <form id="experience-form" class="space-y-4">
+                <div>
+                    <label class="block text-gray-700 mb-2">Job Title</label>
+                    <input type="text" id="job-title" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-purple-600" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-2">Company</label>
+                    <input type="text" id="company" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-purple-600" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-2">Duration</label>
+                    <input type="text" id="duration" placeholder="Jan 2020 - Present" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-purple-600" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-2">What You Gained (Reflection)</label>
+                    <textarea id="experience-reflection" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-purple-600" placeholder="Describe what you learned and gained from this experience..." required></textarea>
+                </div>
+                <div class="flex space-x-4">
+                    <button type="submit" class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition">
+                        Add Experience
+                    </button>
+                    <button type="button" id="cancel-experience" class="bg-gray-300 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-400 transition">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Project Management
+        const projectModal = document.getElementById('project-modal');
+        const addProjectBtn = document.getElementById('add-project-btn');
+        const cancelProjectBtn = document.getElementById('cancel-project');
+        const projectForm = document.getElementById('project-form');
+        const projectsGrid = document.getElementById('projects-grid');
+
+        let projects = [];
+
+        addProjectBtn.addEventListener('click', () => {
+            projectModal.classList.remove('hidden');
+        });
+
+        cancelProjectBtn.addEventListener('click', () => {
+            projectModal.classList.add('hidden');
+            projectForm.reset();
+        });
+
+        projectForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const project = {
+                id: Date.now(),
+                name: document.getElementById('project-name').value,
+                description: document.getElementById('project-description').value,
+                technologies: document.getElementById('project-tech').value,
+                github: document.getElementById('project-github').value,
+                demo: document.getElementById('project-demo').value
+            };
+
+            projects.push(project);
+            renderProjects();
+            
+            projectModal.classList.add('hidden');
+            projectForm.reset();
+        });
+
+        function renderProjects() {
+            const projectCards = projects.map(project => `
+                <div class="bg-white rounded-lg p-6 shadow-lg card-hover">
+                    <h3 class="text-xl font-bold mb-2">${project.name}</h3>
+                    <p class="text-gray-600 mb-4">${project.description}</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        ${project.technologies.split(',').map(tech => 
+                            `<span class="bg-purple-100 text-purple-600 px-2 py-1 rounded text-sm">${tech.trim()}</span>`
+                        ).join('')}
+                    </div>
+                    <div class="flex space-x-4">
+                        ${project.github ? `<a href="${project.github}" target="_blank" class="text-gray-600 hover:text-purple-600"><i class="fab fa-github"></i></a>` : ''}
+                        ${project.demo ? `<a href="${project.demo}" target="_blank" class="text-gray-600 hover:text-purple-600"><i class="fas fa-external-link-alt"></i></a>` : ''}
+                    </div>
+                </div>
+            `).join('');
+
+            projectsGrid.innerHTML = projectCards + `
+                <div class="bg-white rounded-lg p-6 shadow-lg card-hover">
+                    <div class="text-center text-gray-600">
+                        <i class="fas fa-plus text-4xl mb-4"></i>
+                        <p>Add New Project</p>
+                        <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" onclick="document.getElementById('add-project-btn').click()">
+                            Add Project
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Experience Management
+        const experienceModal = document.getElementById('experience-modal');
+        const addExperienceBtn = document.getElementById('add-experience-btn');
+        const cancelExperienceBtn = document.getElementById('cancel-experience');
+        const experienceForm = document.getElementById('experience-form');
+        const experienceContent = document.getElementById('experience-content');
+
+        let experiences = [];
+
+        addExperienceBtn.addEventListener('click', () => {
+            experienceModal.classList.remove('hidden');
+        });
+
+        cancelExperienceBtn.addEventListener('click', () => {
+            experienceModal.classList.add('hidden');
+            experienceForm.reset();
+        });
+
+        experienceForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const experience = {
+                id: Date.now(),
+                title: document.getElementById('job-title').value,
+                company: document.getElementById('company').value,
+                duration: document.getElementById('duration').value,
+                reflection: document.getElementById('experience-reflection').value
+            };
+
+            experiences.push(experience);
+            renderExperiences();
+            
+            experienceModal.classList.add('hidden');
+            experienceForm.reset();
+        });
+
+        function renderExperiences() {
+            const experienceCards = experiences.map(exp => `
+                <div class="bg-white rounded-lg p-8 shadow-lg">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold">${exp.title}</h3>
+                            <p class="text-xl text-purple-600">${exp.company}</p>
+                            <p class="text-gray-600">${exp.duration}</p>
+                        </div>
+                    </div>
+                    <div class="border-t pt-4">
+                        <h4 class="font-semibold mb-2">What I Gained:</h4>
+                        <p class="text-gray-700">${exp.reflection}</p>
+                    </div>
+                </div>
+            `).join('');
+
+            experienceContent.innerHTML = `
+                <div class="space-y-8">
+                    ${experienceCards}
+                    <div class="bg-white rounded-lg p-8 shadow-lg">
+                        <div class="text-center text-gray-600">
+                            <i class="fas fa-briefcase text-6xl mb-4"></i>
+                            <p>Add New Experience</p>
+                            <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition" onclick="document.getElementById('add-experience-btn').click()">
+                                Add Experience
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // File Upload Handlers
+        document.getElementById('resume-upload').addEventListener('change', handleResumeUpload);
+        document.getElementById('research-upload').addEventListener('change', handleResearchUpload);
+
+        function handleResumeUpload(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('resume-content').innerHTML = `
+                        <div class="text-center">
+                            <iframe src="${e.target.result}" width="100%" height="600px" class="border rounded"></iframe>
+                            <a href="${e.target.result}" download="${file.name}" class="inline-block mt-4 bg-purple-600 text-white px-6 py-2 rounded hover:bg-purple-700 transition">
+                                Download Resume
+                            </a>
+                        </div>
+                    `;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function handleResearchUpload(e) {
+            const files = Array.from(e.target.files);
+            const researchList = document.getElementById('research-list');
+            
+            files.forEach(file => {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const paperDiv = document.createElement('div');
+                    paperDiv.className = 'bg-white p-4 rounded-lg shadow';
+                    paperDiv.innerHTML = `
+                        <h4 class="font-semibold mb-2">${file.name}</h4>
+                        <div class="flex space-x-4">
+                            <a href="${e.target.result}" target="_blank" class="text-purple-600 hover:underline">View PDF</a>
+                            <a href="${e.target.result}" download="${file.name}" class="text-purple-600 hover:underline">Download</a>
+                        </div>
+                    `;
+                    researchList.appendChild(paperDiv);
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        // Contact Form
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            e.target.reset();
+        });
+
+        // Initialize
+        renderProjects();
+        renderExperiences();
+    </script>
+</body>
+</html>
