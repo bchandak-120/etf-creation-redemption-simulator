@@ -5,7 +5,7 @@ A comprehensive collection of finance-related applications and tools built with 
 ## Projects Overview
 
 ### 📊 Budget Tracker
-- **Description**: Personal budget management application with income/expense tracking
+- **Description**: Personal budget management application with income/expense tracking 
 - **Features**: Monthly budgeting, category-wise spending, visual analytics
 - **Tech Stack**: React, TailwindCSS, Chart.js
 
