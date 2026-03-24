@@ -174,8 +174,3 @@ The application will open in your web browser at `http://localhost:8501`
 2. Monte Carlo simulation for risk analysis
 3. Portfolio-level arbitrage strategies
 
-
-
----
-
-**Built with ❤️ for financial education and quantitative analysis**
