@@ -174,53 +174,7 @@ The application will open in your web browser at `http://localhost:8501`
 2. Monte Carlo simulation for risk analysis
 3. Portfolio-level arbitrage strategies
 
-## 📚 Educational Value
 
-### Interview Talking Points
-- **ETF Structure**: Deep understanding of primary vs secondary markets
-- **Arbitrage Mechanics**: How APs maintain ETF price efficiency
-- **Cost Analysis**: Comprehensive transaction cost modeling
-- **Quantitative Skills**: NAV calculation, statistical analysis
-- **Financial Engineering**: Derivatives pricing concepts
-
-### Resume Bullet Points
-- Developed quantitative ETF arbitrage simulator using Python and pandas
-- Implemented comprehensive transaction cost modeling for financial analysis
-- Created interactive web dashboard with Streamlit for real-time visualization
-- Analyzed $100M+ ETF market data to identify arbitrage opportunities
-- Applied statistical methods to measure ETF price efficiency and tracking error
-
-### Technical Skills Demonstrated
-- **Financial Modeling**: NAV calculation, arbitrage analysis
-- **Data Engineering**: API integration, data cleaning, validation
-- **Software Development**: Modular design, error handling, testing
-- **Visualization**: Interactive charts, dashboard design
-- **Quantitative Analysis**: Statistical metrics, performance evaluation
-
-## 🤝 Contributing
-
-### Development Setup
-1. Fork the repository
-2. Create feature branch: `git checkout -b feature-name`
-3. Make changes and add tests
-4. Submit pull request with description
-
-### Code Style
-- Follow PEP 8 Python guidelines
-- Add comprehensive docstrings
-- Include type hints where useful
-- Write unit tests for new features
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 📞 Support
-
-For questions, issues, or suggestions:
-- Open an issue on GitHub
-- Review the educational content in the app
-- Check the validation warnings for data quality issues
 
 ---
 
