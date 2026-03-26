@@ -80,32 +80,6 @@ The application follows a modular, object-oriented design with clear separation 
 - Python 3.8 or higher
 - pip package manager
 
-### Installation Steps
-
-1. **Clone the repository**
-```bash
-git clone <repository-url>
-cd etf-creation-redemption-simulator
-```
-
-2. **Create virtual environment**
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-3. **Install dependencies**
-```bash
-pip install -r requirements.txt
-```
-
-4. **Run the application**
-```bash
-streamlit run app.py
-```
-
-The application will open in your web browser at `http://localhost:8501`
-
 ## 🎮 Usage Guide
 
 ### Quick Start
